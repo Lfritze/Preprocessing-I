@@ -149,11 +149,33 @@ body {
 
 @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display|Roboto&display=swap');
 
+/**************FONT VARIABLES*****************************************/
 @headerfont: 'Roboto', sans-serif;
 @plainfont: 'Red Hat Display', sans-serif;
+
+/**************COLOR VARIABLES*****************************************/
 @black: black;
 @lightblue: lightblue;
 @lightgreen: #E0FAD5;
+
+/*******************MIXINS*******************************************/
+// .flex-column { display: flex;
+// 				flex-direction: column;
+// }
+
+.skills-class(){
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.bottom-flex() {
+	display: flex;
+	flex-direction: column;
+}
+
+/****************************STYLE HERE******************************************************/
 
 body {
 	header {
@@ -202,7 +224,7 @@ body {
 		img {
 			width: 20%;
 			border: 5px solid @black;
-			// border-radius: 100px;
+			border-radius: 50px;
 			margin-top: 10px;
 			margin-bottom: 10px;
 		}
@@ -242,22 +264,19 @@ body {
 
 		.skills{
 			.education-skills;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
+			.skills-class();  /******MIXIN PRACTICE******/
     
-      h2 {
+      		h2 {
 				font-weight: bolder;
 				text-decoration: underline;
-			}
+				}
 
 			.icon {
 				color: @black;
 				font-size: 100px;
 				padding: 20px;
 				margin-top: 50px;
-			}
+				}
 		}
 
 		@media screen and (max-width: 500px) {
@@ -276,8 +295,7 @@ body {
 
 	.bottom-content {
 		.middle-content;
-		display: flex;
-		flex-direction: column;
+		.bottom-flex(); /******MIXIN PRACTICE******/
 		text-align: center;
 		border: 2px solid @black;
 

@@ -149,6 +149,10 @@ body {
   font-display: swap;
   src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
+/**************FONT VARIABLES*****************************************/
+/**************COLOR VARIABLES*****************************************/
+/*******************MIXINS*******************************************/
+/****************************STYLE HERE******************************************************/
 body header {
   margin: 0 auto;
 }
@@ -188,6 +192,7 @@ body .top-content h2 {
 body .top-content img {
   width: 20%;
   border: 5px solid black;
+  border-radius: 50px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -224,9 +229,9 @@ body .middle-content .skills {
   width: 50%;
   padding: 10px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  /******MIXIN PRACTICE******/
 }
 body .middle-content .skills h1 {
   font-weight: bolder;
@@ -260,6 +265,7 @@ body .bottom-content {
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
+  /******MIXIN PRACTICE******/
   text-align: center;
   border: 2px solid black;
 }
@@ -277,9 +283,9 @@ body .bottom-content .skills {
   width: 50%;
   padding: 10px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  /******MIXIN PRACTICE******/
 }
 body .bottom-content .skills h1 {
   font-weight: bolder;
