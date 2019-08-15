@@ -4,19 +4,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,25 +92,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -50,10 +137,214 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
 }
 
+/* Resume Styling begins here */
+
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display|Roboto&display=swap');
+
+/**************FONT VARIABLES*****************************************/
+@headerfont: 'Roboto', sans-serif;
+@plainfont: 'Red Hat Display', sans-serif;
+
+/**************COLOR VARIABLES*****************************************/
+@black: black;
+@lightblue: lightblue;
+@lightgreen: #E0FAD5;
+
+/*******************MIXINS*******************************************/
+// .flex-column { display: flex;
+// 				flex-direction: column;
+// }
+
+.skills-class(){
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.bottom-flex() {
+	display: flex;
+	flex-direction: column;
+}
+
+/****************************STYLE HERE******************************************************/
+
+body {
+	header {
+		margin: 0 auto;
+
+		nav {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			background-color: @black;
+			border-bottom: none;
+			padding: 30px;
+			// margin-bottom: 20px;
+
+			a {
+				font-size: 20px;
+				text-decoration: none;
+				color: white;
+				font-family: @plainfont;
+			}
+
+			a:hover {
+				color: @lightblue;
+				font-size: 25px;
+			}
+		}
+	}
+
+	.top-content {
+		border: none;
+		text-align: center;
+		background-color: @lightblue;
+		font-family: @plainfont;
+
+		h1 {
+			font-size: 50px;
+			margin-bottom: 10px;
+			font-family: @headerfont;
+		}
+
+		h2 {
+			font-size: 25px;
+			margin-bottom: 10px;
+		}
+
+		img {
+			width: 20%;
+			border: 5px solid @black;
+			border-radius: 50px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		button {
+			border: 2px solid @black;
+			background-color: white;
+			border-radius: 50px;
+			padding: 15px 40px;
+			margin: 20px;
+			font-size: 20px;
+		}
+
+		button:hover {
+			background-color: @black;
+			color: white;
+			border: 2px solid white;
+		}
+	}
+
+	.middle-content {
+		display: flex;
+		border: none;
+		font-family: @plainfont;
+		background-color: whitesmoke;
+
+		.education-skills {
+			border: 2px solid @black;
+			width: 50%;
+			padding: 10px;
+
+			h1 {
+				font-weight: bolder;
+				text-decoration: underline;
+			}
+		}
+
+		.skills{
+			.education-skills;
+			.skills-class();  /******MIXIN PRACTICE******/
+    
+      		h2 {
+				font-weight: bolder;
+				text-decoration: underline;
+				}
+
+			.icon {
+				color: @black;
+				font-size: 100px;
+				padding: 20px;
+				margin-top: 50px;
+				}
+		}
+
+		@media screen and (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+
+			.education-skills {
+				width: 100%;
+			}
+
+			.skills {
+				.education-skills;
+			}
+		}
+	}
+
+	.bottom-content {
+		.middle-content;
+		.bottom-flex(); /******MIXIN PRACTICE******/
+		text-align: center;
+		border: 2px solid @black;
+
+		h1 {
+			padding: 10px;
+			font-weight: bolder;
+		}
+
+		table {
+
+			background-color: white;
+
+			th {
+				border-bottom: 2px solid @black;
+				border-top: 2px solid @black;
+				color: black;
+				background-color: @lightblue;
+				padding: 10px;
+			}
+
+			td {
+				padding: 10px;
+			}
+		}
+	}
+
+	.contact {
+		margin: 20px;
+		font-family: @plainfont;
+		text-align: center;
+
+		h2 {
+			font-size: 20px;
+		}
+
+		a {
+			margin: 20px;
+		}
+
+		.icon {
+			color: @lightblue;
+		}
+	}
+
+	footer {
+		border: none;
+		border-radius: 12px;
+		padding: 20px;
+		font-family: @plainfont;
+		text-align: center;
+	}
+}
